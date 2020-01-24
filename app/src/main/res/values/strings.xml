@@ -1,0 +1,78 @@
+<resources>
+    <string name="app_name">Metal Calculator</string>
+    <string name="ByLength">By Length</string>
+    <string name="ByWeight">By Weight</string>
+
+    <string name="Density">Density</string>
+    <string name="Thickness">Thickness</string>
+    <string name="Diameter">Diameter</string>
+    <string name="Length">Length</string>
+    <string name="Length_">Length : </string>
+    <string name="Weight">Weight</string>
+    <string name="Weight_">Weight : </string>
+    <string name="Cost_">Cost : </string>
+    <string name="Quantity">Quantity</string>
+    <string name="Price_per_1_kg">Price per 1 kg</string>
+    <string name="Price_per_1_lb">Price per 1 lb</string>
+
+    <string name="first_density_unit">gm/cm\u00B3</string>
+
+    <string name="Unit_Feet">feet</string>
+    <string name="Unit_Inches">inch</string>
+    <string name="Unit_Meter">meter</string>
+    <string name="Unit_MM">mm</string>
+    <string name="Unit_kg">kg</string>
+    <string name="Unit_lbs">lbs</string>
+    <string name="pcs">pcs</string>
+
+    <string name="GetResult">Get Result</string>
+    <string name="Calculate">Calculate</string>
+    <string name="toggle_off">mm | m | kg</string>
+    <string name="toggle_on">in | ft | lb</string>
+    <string name="S">S</string>
+    <string name="No">№</string>
+    <string name="dxs">d x s</string>
+    <string name="Axs">A x s</string>
+    <string name="AxBxs">A x B x s</string>
+    <string name="AxAxs">A x A x s</string>
+    <string name="Noxt">№ x t</string>
+    <string name="bxbxt">b x b x t</string>
+    <string name="Bxbxt">B x b x t</string>
+    <string name="hxb">h x b</string>
+    <string name="splash_subtitle">Calculate the Weight and length of different\ntypes of metals in various shapes</string>
+
+    <string name="err_msg_Nos">Please Enter Nos</string>
+    <string name="err_msg_Diameter">Please Enter Diameter</string>
+    <string name="err_msg_valid_Diameter">Please Enter valid Diameter</string>
+    <string name="err_msg_Thickness">Please Enter Thickness</string>
+    <string name="err_msg_valid_Thickness">Please Enter valid Thickness</string>
+    <string name="err_msg_S">Please Enter S</string>
+    <string name="err_msg_valid_S">Please Enter valid S</string>
+    <string name="err_msg_T">Please Enter T</string>
+    <string name="err_msg_valid_T">Please Enter valid T</string>
+    <string name="err_msg_A">Please Enter a</string>
+    <string name="err_msg_valid_A">Please Enter valid a</string>
+    <string name="err_msg_B">Please Enter b</string>
+    <string name="err_msg_valid_B">Please Enter valid b</string>
+    <string name="err_msg_Length">Please Enter Length</string>
+    <string name="err_msg_valid_Length">Please Enter valid Length</string>
+    <string name="err_msg_Weight">Please Enter Weight</string>
+    <string name="err_msg_valid_Weight">Please Enter valid Weight</string>
+    <string name="Add_Custom_Density">Add Custom Density</string>
+    <string name="Indian_Rupee_Symbol">₹</string>
+    <string name="Material">Material</string>
+    <string name="Result">Result :-</string>
+    <string name="Add_Material">Add Material</string>
+    <string name="Material_Name">Material Name</string>
+    <string name="standard_density_1">Standard Density 1</string>
+    <string name="standard_density_2">Standard Density 2</string>
+    <string name="standard_density_3">Standard Density 3</string>
+    <string name="standard_density_4">Standard Density 4</string>
+    <string name="standard_density_5">Standard Density 5</string>
+    <string name="Add">Add</string>
+    <string name="Select_Material">Select Material</string>
+    <string name="a">a</string>
+    <string name="b">b</string>
+    <string name="h">h</string>
+    <string name="t">t</string>
+</resources>

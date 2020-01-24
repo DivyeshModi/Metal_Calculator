@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="material">
+        <item>Steel</item>
+        <item>Aluminum</item>
+        <item>Bronze</item>
+        <item>Duralumin</item>
+        <item>Brass</item>
+        <item>Magnesium</item>
+        <item>Copper</item>
+        <item>Nickel</item>
+        <item>Nichrome</item>
+        <item>Tin </item>
+        <item>Plumbum</item>
+        <item>Stainless steel</item>
+        <item>Chrome</item>
+        <item>Zinc</item>
+        <item>Cast iron</item>
+        <item>Titanium</item>
+        <item>Silver</item>
+        <item>Gold</item>
+        <item>Platinum</item>
+        <item>Textolite</item>
+        <item>Caprolon (PA 6)</item>
+        <item>Teflon</item>
+        <item>Paronite</item>
+    </array>
+</resources>
