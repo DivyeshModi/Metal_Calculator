@@ -3,7 +3,6 @@ package com.example.metalcalculator.Activity
 import android.annotation.SuppressLint
 import android.app.Activity
 import android.content.DialogInterface
-import android.graphics.Color
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextUtils

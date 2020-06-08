@@ -447,7 +447,8 @@ class OtherFirstActivity : AppCompatActivity() {
                 } else if (rb_weight.isChecked) {
                     if (CALCULATE_S <= (if (CALCULATE_A >= CALCULATE_B) CALCULATE_B else CALCULATE_A) / 2.0) {
                         WEIGHT_MAIN =
-                            ((KDV * edt_Weight.text.toString().toDouble()) / ((((CALCULATE_A * CALCULATE_B) - ((CALCULATE_A - CALCULATE_WEIGHT) * (CALCULATE_B - CALCULATE_WEIGHT))) * DENSITY) * 0.001))
+                            ((KDV * edt_Weight.text.toString()
+                                .toDouble()) / ((((CALCULATE_A * CALCULATE_B) - ((CALCULATE_A - CALCULATE_WEIGHT) * (CALCULATE_B - CALCULATE_WEIGHT))) * DENSITY) * 0.001))
                         if (IS_LARGE_UNIT) {
                             WEIGHT_MAIN *= 3.28084
                             WEIGHT_QUANTITY = WEIGHT_MAIN * QUANTITY
@@ -525,7 +526,8 @@ class OtherFirstActivity : AppCompatActivity() {
                 } else if (rb_weight.isChecked) {
                     if (CALCULATE_S <= (if (CALCULATE_A >= CALCULATE_B) CALCULATE_B else CALCULATE_A)) {
                         WEIGHT_MAIN =
-                            ((KDV * edt_Weight.text.toString().toDouble()) / ((((CALCULATE_A * CALCULATE_S) + ((CALCULATE_B - CALCULATE_S) * CALCULATE_S)) * DENSITY) * 0.001))
+                            ((KDV * edt_Weight.text.toString()
+                                .toDouble()) / ((((CALCULATE_A * CALCULATE_S) + ((CALCULATE_B - CALCULATE_S) * CALCULATE_S)) * DENSITY) * 0.001))
 
                         if (IS_LARGE_UNIT) {
                             WEIGHT_MAIN *= 3.28084

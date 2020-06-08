@@ -4,7 +4,6 @@ package com.example.metalcalculator.Custom
 
 import android.app.Activity
 import android.content.Context
-import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.view.inputmethod.InputMethodManager
@@ -7475,19 +7474,5 @@ object Config {
         val bundle = Bundle()
         bundle.putString("Material_Name", item_name)
         mFirebaseAnalytics.logEvent(item_name.replace(" ".toRegex(), "_"), bundle)
-    }
-
-    private fun Share_App(ac: Activity) {
-        try {
-            val i = Intent(Intent.ACTION_SEND)
-            i.type = "text/plain"
-            i.putExtra(Intent.EXTRA_SUBJECT, ac.getString(R.string.app_name))
-            var sAux = "\nLet me recommend you this application\n\n"
-            sAux = sAux + "https://play.google.com/store/apps/details?id=" + ac.getPackageName()
-            i.putExtra(Intent.EXTRA_TEXT, sAux)
-            ac.startActivity(Intent.createChooser(i, "choose one"))
-        } catch (e: Exception) {
-            //e.toString();
-        }
     }
 }
