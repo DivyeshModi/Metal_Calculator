@@ -90,6 +90,7 @@ class ShapesActivity : AppCompatActivity() {
                 txt_shape_name.text = shapes_name_list[pos]
 
                 itemView.setOnClickListener {
+                    Config.SetFireBaseAnalytics(ac as ShapesActivity, shapes_name_list[pos])
                     if (pos == 0 || pos == 3) {
                         val mIntent = Intent(ac, FirstFourActivity::class.java)
                         mIntent.putExtra("Selected_Shape_position", pos)
@@ -117,8 +118,8 @@ class ShapesActivity : AppCompatActivity() {
             finish()
             moveTaskToBack(true)
         } else {
-//            Toast.makeText(ac, "Press once again to exit", Toast.LENGTH_SHORT).show()
             Config.ShowSnackBar(ac as ShapesActivity, "Press once again to exit", linear_main)
+                .show()
             back_pressed = System.currentTimeMillis()
         }
     }

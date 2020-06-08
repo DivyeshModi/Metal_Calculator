@@ -628,8 +628,6 @@ class SecondActivity : AppCompatActivity() {
                     } else if (rb_weight.isChecked) {
                         val CALCULATE_WEIGHT = KDV * edt_Weight.text.toString().toDouble()
 
-                        val WEIGHT = CALCULATE_DIAMETER - (CALCULATE_D * 2)
-
                         WEIGHT_MAIN =
                             ((CALCULATE_WEIGHT * 4.0) / ((((1.73 * CALCULATE_D) * CALCULATE_D) * DENSITY) * 0.001))
 
@@ -746,6 +744,10 @@ class SecondActivity : AppCompatActivity() {
                 }
             }
             CalculationDialog(L1, L2, L3, L4, V1, V2, V3, V4).show(supportFragmentManager, "")
+            Config.SetCalculateFireBaseAnalytics(
+                ac as SecondActivity,
+                "Calculated_" + SELECTED_MATERIAL?.Name
+            )
         }
     }
 
@@ -904,7 +906,6 @@ class SecondActivity : AppCompatActivity() {
         alert?.setView(layout)
         mDialogMaterial = alert?.create()
         mDialogMaterial?.window?.setBackgroundDrawableResource(android.R.color.transparent)
-//        mDialogMaterial!!.window!!.attributes.windowAnimations = R.style.DialogAnimation
 
         val txt_label = layout.findViewById<TextView>(R.id.txt_label)
         txt_label.visibility = View.VISIBLE
@@ -1007,7 +1008,6 @@ class SecondActivity : AppCompatActivity() {
         alert?.setView(layout)
         mDialogAddMaterial = alert?.create()
         mDialogAddMaterial?.window?.setBackgroundDrawableResource(android.R.color.transparent)
-//        mDialogAddMaterial!!.window!!.attributes.windowAnimations = R.style.DialogAnimation
 
         add_txt_layout_Name = layout.findViewById(R.id.txt_layout_Name)
         add_txt_layout_D1 = layout.findViewById(R.id.txt_layout_D1)
@@ -1274,7 +1274,6 @@ class SecondActivity : AppCompatActivity() {
         alert?.setView(layout)
         mDialogDensity = alert?.create()
         mDialogDensity?.window?.setBackgroundDrawableResource(android.R.color.transparent)
-//        mDialogDensity!!.window!!.attributes.windowAnimations = R.style.DialogAnimation
 
         val edt_Custom_Density = layout.findViewById<EditText>(R.id.edt_Custom_Density)
         val txt_1 = layout.findViewById<TextView>(R.id.txt_1)

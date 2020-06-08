@@ -757,7 +757,6 @@ class SixElevenActivity : AppCompatActivity() {
         alert?.setView(layout)
         mDialogNos = alert?.create()
         mDialogNos?.window?.setBackgroundDrawableResource(android.R.color.transparent)
-//        mDialogMaterial!!.window!!.attributes.windowAnimations = R.style.DialogAnimation
 
         val mRecyclerView = layout.findViewById<RecyclerView>(R.id.mRecyclerView)
         mRecyclerView.adapter = NosAdapter()
@@ -778,6 +777,7 @@ class SixElevenActivity : AppCompatActivity() {
             return No_List.size
         }
 
+        @Suppress("DEPRECATION")
         internal inner class MyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
             private var txt: TextView = itemView.findViewById(R.id.txt)
 

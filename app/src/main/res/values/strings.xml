@@ -3,6 +3,8 @@
     <string name="ByLength">By Length</string>
     <string name="ByWeight">By Weight</string>
 
+    <string name="sharing_text">Calculate the Weight and length of different types of Metals in various shapes.</string>
+
     <string name="Density">Density</string>
     <string name="Thickness">Thickness</string>
     <string name="Diameter">Diameter</string>

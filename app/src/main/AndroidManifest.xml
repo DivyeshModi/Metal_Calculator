@@ -3,6 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.metalcalculator">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_logo"
@@ -11,37 +13,34 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="AllowBackup">
-        <activity android:name=".Activity.OtherFirstActivity"
+        <activity
+            android:name=".Activity.OtherFirstActivity"
             android:screenOrientation="portrait"
-            tools:ignore="InnerclassSeparator" />
-        <activity android:name=".Activity.FifthActivity"
+            tools:ignore="InnerclassSeparator,LockedOrientationActivity" />
+        <activity
+            android:name=".Activity.FifthActivity"
             android:screenOrientation="portrait"
-            tools:ignore="InnerclassSeparator" />
+            tools:ignore="InnerclassSeparator,LockedOrientationActivity" />
         <activity
             android:name=".Activity.SubShapeActivity"
             android:screenOrientation="portrait"
-            tools:ignore="InnerclassSeparator" />
+            tools:ignore="InnerclassSeparator,LockedOrientationActivity" />
         <activity
             android:name=".Activity.SixElevenActivity"
             android:screenOrientation="portrait"
-            tools:ignore="InnerclassSeparator" />
+            tools:ignore="InnerclassSeparator,LockedOrientationActivity" />
         <activity
             android:name=".Activity.SecondActivity"
             android:screenOrientation="portrait"
-            tools:ignore="InnerclassSeparator" />
+            tools:ignore="InnerclassSeparator,LockedOrientationActivity" />
         <activity
             android:name=".Activity.FirstFourActivity"
             android:screenOrientation="portrait"
-            tools:ignore="InnerclassSeparator" />
-        <activity
-            android:name=".Activity.MaterialActivity"
-            android:screenOrientation="portrait"
-            android:windowSoftInputMode="adjustNothing"
-            tools:ignore="InnerclassSeparator" />
+            tools:ignore="InnerclassSeparator,LockedOrientationActivity" />
         <activity
             android:name=".Activity.SplashActivity"
             android:screenOrientation="portrait"
-            tools:ignore="InnerclassSeparator">
+            tools:ignore="InnerclassSeparator,LockedOrientationActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <action android:name="android.intent.action.VIEW" />
@@ -52,7 +51,7 @@
         <activity
             android:name=".Activity.ShapesActivity"
             android:screenOrientation="portrait"
-            tools:ignore="InnerclassSeparator" />
+            tools:ignore="InnerclassSeparator,LockedOrientationActivity" />
     </application>
 
 </manifest>

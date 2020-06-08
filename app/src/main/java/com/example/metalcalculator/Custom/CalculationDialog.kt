@@ -1,5 +1,6 @@
 package com.example.metalcalculator.Custom
 
+import android.content.Intent
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
@@ -8,9 +9,11 @@ import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageButton
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.fragment.app.DialogFragment
+import com.example.metalcalculator.Model.Model_Material
 import com.example.metalcalculator.R
 
 class CalculationDialog(
@@ -48,6 +51,8 @@ class CalculationDialog(
         val linear_3 = v.findViewById<LinearLayout>(R.id.linear_3)
         val linear_4 = v.findViewById<LinearLayout>(R.id.linear_4)
 
+        val img_share = v.findViewById<ImageButton>(R.id.img_share)
+
         val txt_1 = v.findViewById<TextView>(R.id.txt_1)
         val txt_2 = v.findViewById<TextView>(R.id.txt_2)
         val txt_3 = v.findViewById<TextView>(R.id.txt_3)
@@ -75,6 +80,45 @@ class CalculationDialog(
         txt_2_ans.text = V2
         txt_3_ans.text = V3
         txt_4_ans.text = V4
+
+        img_share.setOnClickListener {
+            val SELECTED_MATERIAL: Model_Material? =
+                activity?.let { it1 -> Config.getMaterial(it1) }
+            val sb = StringBuilder()
+            sb.append("Material Name : ")
+            sb.append(SELECTED_MATERIAL?.Name)
+            sb.append("\n")
+            sb.append(L1)
+            sb.append(V1)
+            sb.append("\n")
+            sb.append(L2)
+            sb.append(V2)
+            if (L3 != "") {
+                sb.append("\n")
+                sb.append(L3)
+                sb.append(V3)
+            }
+            if (L4 != "") {
+                sb.append("\n")
+                sb.append(L4)
+                sb.append(V4)
+            }
+            sb.append("\n\n")
+            sb.append(activity?.resources?.getString(R.string.sharing_text))
+            sb.append("\n")
+            sb.append("https://play.google.com/store/apps/details?id=")
+            sb.append(activity?.packageName)
+
+            try {
+                val i = Intent(Intent.ACTION_SEND)
+                i.type = "text/plain"
+                i.putExtra(Intent.EXTRA_SUBJECT, activity?.getString(R.string.app_name))
+                i.putExtra(Intent.EXTRA_TEXT, sb.toString())
+                activity?.startActivity(Intent.createChooser(i, "select anyone"))
+            } catch (e: Exception) {
+                e.printStackTrace()
+            }
+        }
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {

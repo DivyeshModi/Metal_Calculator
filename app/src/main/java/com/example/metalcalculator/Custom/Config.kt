@@ -1,13 +1,18 @@
+@file:Suppress("DEPRECATION")
+
 package com.example.metalcalculator.Custom
 
 import android.app.Activity
 import android.content.Context
+import android.content.Intent
+import android.os.Bundle
 import android.view.View
 import android.view.inputmethod.InputMethodManager
 import android.widget.TextView
 import com.example.metalcalculator.Model.Model_Material
 import com.example.metalcalculator.R
 import com.google.android.material.snackbar.Snackbar
+import com.google.firebase.analytics.FirebaseAnalytics
 import com.google.gson.Gson
 
 
@@ -7423,7 +7428,7 @@ object Config {
         ac: Activity,
         Message: String?,
         parentLayout: View?
-    ) {
+    ): Snackbar {
         val mSnackBar = Snackbar.make(parentLayout!!, Message!!, Snackbar.LENGTH_LONG)
         val view = mSnackBar.view
         view.setPadding(5, 5, 5, 5)
@@ -7434,7 +7439,7 @@ object Config {
         mainTextView.textSize = 16f
         mainTextView.setTextColor(ac.resources.getColor(R.color.colorWhite))
         mSnackBar.duration = 2000
-        mSnackBar.show()
+        return mSnackBar
     }
 
     fun getMaterial(ac: Activity): Model_Material? {
@@ -7456,5 +7461,33 @@ object Config {
         val response = gson.toJson(model)
         editor.putString("current_material", response)
         editor.apply()
+    }
+
+    fun SetFireBaseAnalytics(ac: Activity, item_name: String) {
+        val mFirebaseAnalytics: FirebaseAnalytics = FirebaseAnalytics.getInstance(ac)
+        val bundle = Bundle()
+        bundle.putString("Material_Shape", item_name)
+        mFirebaseAnalytics.logEvent(item_name.replace(" ".toRegex(), "_"), bundle)
+    }
+
+    fun SetCalculateFireBaseAnalytics(ac: Activity, item_name: String) {
+        val mFirebaseAnalytics: FirebaseAnalytics = FirebaseAnalytics.getInstance(ac)
+        val bundle = Bundle()
+        bundle.putString("Material_Name", item_name)
+        mFirebaseAnalytics.logEvent(item_name.replace(" ".toRegex(), "_"), bundle)
+    }
+
+    private fun Share_App(ac: Activity) {
+        try {
+            val i = Intent(Intent.ACTION_SEND)
+            i.type = "text/plain"
+            i.putExtra(Intent.EXTRA_SUBJECT, ac.getString(R.string.app_name))
+            var sAux = "\nLet me recommend you this application\n\n"
+            sAux = sAux + "https://play.google.com/store/apps/details?id=" + ac.getPackageName()
+            i.putExtra(Intent.EXTRA_TEXT, sAux)
+            ac.startActivity(Intent.createChooser(i, "choose one"))
+        } catch (e: Exception) {
+            //e.toString();
+        }
     }
 }

@@ -11,6 +11,7 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.metalcalculator.Custom.Config
 import com.example.metalcalculator.Custom.SpacesItemDecoration
 import com.example.metalcalculator.R
 import kotlinx.android.synthetic.main.activity_shapes.*
@@ -243,6 +244,10 @@ class SubShapeActivity : AppCompatActivity() {
                 txt_shape_name.text = shapes_names_list[pos]
 
                 itemView.setOnClickListener {
+                    Config.SetFireBaseAnalytics(
+                        ac as SubShapeActivity,
+                        "sub_shape_" + shapes_names_list[pos]
+                    )
                     if (Selected_Shape_position == 1) {
                         if (pos == 0) {
                             val mIntent = Intent(ac, SecondActivity::class.java)
